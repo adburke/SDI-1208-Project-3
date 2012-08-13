@@ -2,7 +2,7 @@
 	Aaron Burke
 	08/12/2012
 	Project 3
-	Making
+	Creating a Hockey Team with players 
 */
 
 var hockeyTeam = function (name, coach) {
