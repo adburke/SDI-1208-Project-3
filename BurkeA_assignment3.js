@@ -5,10 +5,10 @@
 	Making
 */
 
-var hockeyTeam = function (name) {
+var hockeyTeam = function (name, coach) {
 	// Private
 	var roster = [];
-	var coach, player;
+	var coach;
 	// Accessors
 	var getName = function () { return name; };
 	var getCoach = function () { return coach; };
@@ -16,12 +16,13 @@ var hockeyTeam = function (name) {
 		for (var i =0, j = roster.length; i < j; i++){
 			if (roster[i] === player.name(player)) {
 				var playerInfo = roster[i] + " " + "age: " + player.age() + "\n" + player.born();
-				break;
-			} else {
-				console.log("Player not found.");
 			}
 		};
-		return playerInfo;
+		if (playerInfo === undefined) {
+			return playerInfo = "Player not on the roster.";
+		} else {
+			return playerInfo;
+		};
 	};
 	var getRoster = function () { return roster; };
 
@@ -81,13 +82,30 @@ var player = function (name, age, born, number, hand, position) {
 	};
 };
 
+// Create players
+var player1 = player("Aaron Burke", 30, ["2-23-82","Lacrosse","WI"], 23, "center");
+var player2 = player("John Doe", 24, ["5-13-88","Chicago","IL"], 5, "Left Wing");
+var player3 = player("Bob Smith", 21, ["2-5-91","Baltimore","MD"], 12, "Right Wing");
+var player4 = player("Mark Jones", 30, ["1-17-82","Ancorage","AK"], 2, "Goalie");
+var player5 = player("Bill Smith", 20, ["2-23-90","St. Paul","MN"], 15, "Right Defense");
+var player6 = player("Robert White", 28, ["7-20-84","Anarbor","MI"], 23, "Left Defense");
+// Create Team
+var ravens = hockeyTeam("Ravens", "Joe Mann");
+// Add players to team
+ravens.addPlayer(["Aaron Burke", "John Doe", "Bob Smith", "Mark Jones", "Bill Smith", "Robert White"]);
 
-var aaronburke = player("Aaron Burke", 30, ["2-23-82","Lacrosse","Wisconsin"], 23, "center");
-console.log(aaronburke.age());
-console.log(aaronburke.born());
-var team1 = hockeyTeam("Team 1");
-team1.addPlayer(["Aaron Burke", "John Doe", "Bob Smith", "Mark Jones", "Bill Smith", "Robert White"]);
-console.log(team1.roster());
-team1.cutPlayer(["Bob Smith"]);
-console.log(team1.roster());
-console.log(team1.teamPlayer(aaronburke));
+console.log(player1.age());
+console.log(player1.born());
+var ravens = hockeyTeam("Team 1");
+ravens.addPlayer(["Aaron Burke", "John Doe", "Bob Smith", "Mark Jones", "Bill Smith", "Robert White"]);
+console.log(ravens.roster());
+ravens.cutPlayer(["Bob Smith"]);
+console.log(ravens.roster());
+console.log(player1.name());
+console.log(" ");
+console.log(ravens.teamPlayer(player1));
+console.log(ravens.teamPlayer(player2));
+console.log(ravens.teamPlayer(player3)); // Cut from team should not show up on roster
+console.log(ravens.teamPlayer(player4));
+console.log(ravens.teamPlayer(player5));
+console.log(ravens.teamPlayer(player6));
