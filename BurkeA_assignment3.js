@@ -43,9 +43,9 @@ var hockeyTeam = function (name) {
 
 	// Public methods
 	return {
-		"name": getName,
-		"coach": getCoach,
-		"player": getPlayer,
+		"teamName": getName,
+		"teamCoach": getCoach,
+		"teamPlayer": getPlayer,
 		"roster": getRoster,
 		"cutPlayer": cutPlayer,
 		"addPlayer": addPlayer
@@ -53,3 +53,18 @@ var hockeyTeam = function (name) {
 	};
 };
 
+var player = function (name, age, born) {
+	// Private
+	// Accessors
+	var getName = function () { return name;};
+	var getAge = function () { return age;};
+	
+	// Public methods
+	return {
+		"name": getName,
+		"age": getAge,
+		"born": bornInfo,
+		"playerNumber": playerNumber,
+		"teamPlaysFor": teamPlaysFor
+	};
+};
