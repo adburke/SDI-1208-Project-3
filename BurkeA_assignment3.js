@@ -14,13 +14,14 @@ var hockeyTeam = function (name) {
 	var getCoach = function () { return coach; };
 	var getPlayer = function (player) {
 		for (var i =0, j = roster.length; i < j; i++){
-			if (roster[i] === player) {
-				console.log(player + " " + player.age(player) + " " + player.born(player));
+			if (roster[i] === player.name(player)) {
+				var playerInfo = roster[i] + " " + "age: " + player.age() + "\n" + player.born();
+				break;
 			} else {
 				console.log("Player not found.");
 			}
 		};
-		return player;
+		return playerInfo;
 	};
 	var getRoster = function () { return roster; };
 
@@ -59,12 +60,12 @@ var hockeyTeam = function (name) {
 	};
 };
 
-var player = function (name, age, born) {
+var player = function (name, age, born, number, hand, position) {
 	// Private
 	// Accessors
 	var getName = function () { return name; };
-	var getAge = function (name) { return age; };
-	var bornInfo = function (name) {
+	var getAge = function () { return age; };
+	var bornInfo = function () {
 		var bornOutput = "Born in " + born[1] + ", " + born[2] + " on " + born[0] + ".";
 		return bornOutput;
 	};
@@ -81,9 +82,12 @@ var player = function (name, age, born) {
 };
 
 
-var aaron = player("Aaron Burke", 30, ["2-23-82","Lacrosse","Wisconsin"]);
-console.log(aaron.age());
-console.log(aaron.born());
+var aaronburke = player("Aaron Burke", 30, ["2-23-82","Lacrosse","Wisconsin"], 23, "center");
+console.log(aaronburke.age());
+console.log(aaronburke.born());
 var team1 = hockeyTeam("Team 1");
 team1.addPlayer(["Aaron Burke", "John Doe", "Bob Smith", "Mark Jones", "Bill Smith", "Robert White"]);
 console.log(team1.roster());
+team1.cutPlayer(["Bob Smith"]);
+console.log(team1.roster());
+console.log(team1.teamPlayer(aaronburke));
