@@ -27,7 +27,7 @@ var hockeyTeam = function (name, coach) {
 			playerInfo = "Player not on roster.";
 			return playerInfo;
 		};
-		for (var ii = 0, jj = json.players.length; ii < jj; ii++){   // Loop through JSON object of players to find info
+		for (var ii = 0, jj = json.players.length; ii < jj; ii++){   // Loop through json object of players to find info
 			//console.log("got here also");  // Debug check on loop
 			var play = json.players[ii];
 			//console.log(play.name + " " + roster[i]);  // Debug check on loop
