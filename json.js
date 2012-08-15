@@ -48,6 +48,48 @@ var json = {
 			"hand": "Left",
 			"position": "Left Defense",
 			"born": ["7-20-84","Anarbor","MI"]
+		},
+		{
+			"name": "Jack Burke",
+			"age": 34,
+			"hand": "Right",
+			"position": "Center",
+			"born": ["2-20-78","Madison","WI"]
+		},
+		{
+			"name": "Jim Dole",
+			"age": 24,
+			"hand": "Left",
+			"position": "Left Wing",
+			"born": ["2-6-88","Boise","ID"]
+		},
+		{
+			"name": "Ben Dover",
+			"age": 21,
+			"hand": "Right",
+			"position": "Right Wing",
+			"born": ["9-28-91","Richmond","VA"]
+		},
+		{
+			"name": "Mike Jones",
+			"age": 21,
+			"hand": "Right",
+			"position": "Goalie",
+			"born": ["3-12-91","Miami","FL"]
+		},
+		{
+			"name": "Matt Black",
+			"age": 20,
+			"hand": "Right",
+			"position": "Right Defense",
+			"born": ["5-22-90","New York","NY"]
+		},
+		{
+			"name": "Alex Sole",
+			"age": 28,
+			"hand": "Left",
+			"position": "Left Defense",
+			"born": ["10-2-84","Buffalo","NY"]
 		}
 
 	]

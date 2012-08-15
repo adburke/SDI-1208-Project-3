@@ -5,6 +5,8 @@
 	Creating a Hockey Team with players
 */
 
+var teams = [];  // Hold array of hockeyTeam objects created
+
 var hockeyTeam = function (name, coach) {
 	// Private
 	var roster = [];
@@ -75,11 +77,19 @@ var hockeyTeam = function (name, coach) {
 
 // Create Team
 var ravens = hockeyTeam("Ravens", "Joe Mann");
+teams.push(ravens);
+var blackhawks = hockeyTeam("Black Hawks", "Sean Smith");
+teams.push(blackhawks);
+console.log(teams);
 // Add players to team
 ravens.addPlayer(["Aaron Burke", "John Doe", "Bob Smith", "Mark Jones", "Bill Smith", "Robert White"]);
+blackhawks.addPlayer(["Jack Burke", "Jim Dole", "Ben Dover", "Mike Jones", "Matt Black", "Alex Sole"]);
 console.log(ravens.getName());
-
 console.log(ravens.getRoster());
+console.log(blackhawks.getName());
+console.log(blackhawks.getRoster());
+
+
 ravens.cutPlayer(["Bob Smith"]);
 console.log(ravens.getRoster());
 //console.log(player1.name());
