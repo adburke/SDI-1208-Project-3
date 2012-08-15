@@ -8,7 +8,7 @@
 var hockeyTeam = function (name, coach) {
 	// Private
 	var roster = [];
-	var coach;
+	
 	// Accessors
 	var getName = function () { return name; };
 	var getCoach = function () { return coach; };
