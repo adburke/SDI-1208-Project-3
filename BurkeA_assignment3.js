@@ -8,16 +8,15 @@
 var teams = [];  // Holds an array of hockeyTeam objects created
 
 // Constructor 
-var hockeyTeam = function (name, coach) {
+var HockeyTeam = function (name, coach) {
 	// Private
 	var roster = [];
-	
 	// Accessors
 	var getName = function () { return name; };
 	var getCoach = function () { return coach; };
-	var getPlayer = function (player,json) {     // Takes a player name and JSON data from json.js
+	var getPlayer = function (player, json) {     // Takes a player name and JSON data from json.js
 		var playerInfo;
-		for (var i =0, j = roster.length; i < j; i++){ // loop to see if player is on roster if found break and move on
+		for (var i = 0, j = roster.length; i < j; i++) { // loop to see if player is on roster if found break and move on
 			//console.log("got here"); // Debug check on loop
 			//console.log(roster[i]);  // Debug check on loop
 			if (roster[i] === player){
@@ -28,7 +27,7 @@ var hockeyTeam = function (name, coach) {
 			playerInfo = "Player not on roster.";
 			return playerInfo;
 		};
-		for (var ii = 0, jj = json.players.length; ii < jj; ii++){   // Loop through json object of players to find info
+		for (var ii = 0, jj = json.players.length; ii < jj; ii++) {   // Loop through json object of players to find info
 			//console.log("got here also");  // Debug check on loop
 			var play = json.players[ii];
 			//console.log(play.name + " " + roster[i]);  // Debug check on loop
@@ -115,10 +114,10 @@ var hockeyTeam = function (name, coach) {
 
 // Create Team
 console.log("Time to create some Hockey Teams!");
-var team1 = hockeyTeam("Ravens", "Joe Mann");
+var team1 = HockeyTeam("Ravens", "Joe Mann");
 console.log(team1.getName() + " team created and the coach is " + team1.getCoach() + ".");
 teams.push(team1);
-var team2 = hockeyTeam("Black Hawks", "Sean Smith");
+var team2 = HockeyTeam("Black Hawks", "Sean Smith");
 console.log(team2.getName() + " team created and the coach is " + team2.getCoach() + ".");
 teams.push(team2);
 console.log(" ");

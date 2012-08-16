@@ -12,7 +12,7 @@ var playerData = {
 			"age": 30,
 			"hand": "Right",
 			"position": "Center",
-			"born": ["2-23-82","Lacrosse","WI"],
+			"born": ["2-23-82", "Lacrosse", "WI"],
 			"playedCollege": true
 		},
 		{
@@ -20,7 +20,7 @@ var playerData = {
 			"age": 24,
 			"hand": "Left",
 			"position": "Left Wing",
-			"born": ["5-13-88","Chicago","IL"],
+			"born": ["5-13-88", "Chicago", "IL"],
 			"playedCollege": true
 		},
 		{
@@ -28,7 +28,7 @@ var playerData = {
 			"age": 21,
 			"hand": "Right",
 			"position": "Right Wing",
-			"born": ["2-5-91","Baltimore","MD"],
+			"born": ["2-5-91", "Baltimore", "MD"],
 			"playedCollege": false
 		},
 		{
@@ -36,7 +36,7 @@ var playerData = {
 			"age": 30,
 			"hand": "Right",
 			"position": "Goalie",
-			"born": ["1-17-82","Ancorage","AK"],
+			"born": ["1-17-82", "Ancorage", "AK"],
 			"playedCollege": true
 		},
 		{
@@ -44,7 +44,7 @@ var playerData = {
 			"age": 20,
 			"hand": "Right",
 			"position": "Right Defense",
-			"born": ["2-23-90","St. Paul","MN"],
+			"born": ["2-23-90", "St. Paul", "MN"],
 			"playedCollege": false
 		},
 		{
@@ -52,7 +52,7 @@ var playerData = {
 			"age": 28,
 			"hand": "Left",
 			"position": "Left Defense",
-			"born": ["7-20-84","Ann Arbor","MI"],
+			"born": ["7-20-84", "Ann Arbor", "MI"],
 			"playedCollege": true
 		},
 		{
@@ -60,7 +60,7 @@ var playerData = {
 			"age": 34,
 			"hand": "Right",
 			"position": "Center",
-			"born": ["2-20-78","Madison","WI"],
+			"born": ["2-20-78", "Madison", "WI"],
 			"playedCollege": true
 		},
 		{
@@ -68,7 +68,7 @@ var playerData = {
 			"age": 24,
 			"hand": "Left",
 			"position": "Left Wing",
-			"born": ["2-6-88","Boise","ID"],
+			"born": ["2-6-88", "Boise", "ID"],
 			"playedCollege": true
 		},
 		{
@@ -76,7 +76,7 @@ var playerData = {
 			"age": 21,
 			"hand": "Right",
 			"position": "Right Wing",
-			"born": ["9-28-91","Richmond","VA"],
+			"born": ["9-28-91", "Richmond", "VA"],
 			"playedCollege": false
 		},
 		{
@@ -84,7 +84,7 @@ var playerData = {
 			"age": 21,
 			"hand": "Right",
 			"position": "Goalie",
-			"born": ["3-12-91","Miami","FL"],
+			"born": ["3-12-91", "Miami", "FL"],
 			"playedCollege": false
 		},
 		{
@@ -92,7 +92,7 @@ var playerData = {
 			"age": 20,
 			"hand": "Right",
 			"position": "Right Defense",
-			"born": ["5-22-90","New York","NY"],
+			"born": ["5-22-90", "New York", "NY"],
 			"playedCollege": false
 		},
 		{
@@ -100,7 +100,7 @@ var playerData = {
 			"age": 28,
 			"hand": "Left",
 			"position": "Left Defense",
-			"born": ["10-2-84","Buffalo","NY"],
+			"born": ["10-2-84", "Buffalo", "NY"],
 			"playedCollege": true
 		},
 		{
@@ -108,7 +108,7 @@ var playerData = {
 			"age": 25,
 			"hand": "Right",
 			"position": "Right Wing",
-			"born": ["1-3-87","Vancouver","CAN"],
+			"born": ["1-3-87", "Vancouver", "CAN"],
 			"playedCollege": true
 		},
 		{
@@ -116,7 +116,7 @@ var playerData = {
 			"age": 28,
 			"hand": "Right",
 			"position": "Right Defense",
-			"born": ["9-2-84","Ontario","CAN"],
+			"born": ["9-2-84", "Ontario", "CAN"],
 			"playedCollege": true
 		}
 
