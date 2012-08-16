@@ -7,6 +7,7 @@
 
 var teams = [];  // Holds an array of hockeyTeam objects created
 
+// Constructor 
 var hockeyTeam = function (name, coach) {
 	// Private
 	var roster = [];
@@ -67,8 +68,8 @@ var hockeyTeam = function (name, coach) {
 	};
 	var playGame = function (homeTeam,awayTeam){    // Game simulation every play has a different outcome
 		var outCome = [];
-		var hScore = Math.floor(Math.random()*11);
-		var aScore = Math.floor(Math.random()*11);
+		var hScore = Math.floor(Math.random()*8);
+		var aScore = Math.floor(Math.random()*8);
 		if (hScore > aScore) {
 			console.log(homeTeam + " won the game!");
 		}
@@ -81,6 +82,21 @@ var hockeyTeam = function (name, coach) {
 		outCome.push([awayTeam,aScore]);
 		return outCome;
 	};
+	var playedCollege  = function () {
+		var collegePlayers;
+		for (var i = 0, j = roster.length; i < j; i++){
+			for (var ii = 0, jj = playerData.players.length; ii < jj; ii++){
+				var play = playerData.players[ii];
+				if ((roster[i] === play.name) && (play.playedCollege === true)) {
+					collegePlayers = true
+					break;
+				} else if ((roster[i] === play.name) && (play.playedCollege === false)) {
+					break;
+				};
+			};
+		};
+		return collegePlayers;
+	};
 
 	// Public methods
 	return {
@@ -90,7 +106,8 @@ var hockeyTeam = function (name, coach) {
 		"getRoster": getRoster,	// Accessor
 		"cutPlayer": cutPlayer, // Mutator
 		"addPlayer": addPlayer, // Mutator
-		"playGame": playGame
+		"playGame": playGame,
+		"haveCollegePlayers": playedCollege
 
 	};
 };
@@ -115,9 +132,22 @@ console.log(" ");
 // View the rosters
 console.log("Team 1's name is the " + team1.getName() + ".");
 console.log("Here is the " + team1.getName()+ " roster: " + team1.getRoster() + ".");
+console.log("Do the " + team1.getName() + " have any former college players?");
+if (team1.haveCollegePlayers() === true){
+	console.log("Yes they do.");
+} else {
+	console.log("No they do not.");
+};
+
 console.log(" ");
 console.log("Team 2's name is the " + team2.getName() + ".");
 console.log("Here is the " + team2.getName()+ " roster: " + team2.getRoster() + ".");
+console.log("Do the " + team2.getName() + " have any former college players?");
+if (team2.haveCollegePlayers() === true){
+	console.log("Yes they do.");
+} else {
+	console.log("No they do not.");
+};
 console.log(" ");
 // Cut some players
 console.log("Looks like we need to cut some players before the big game.");
@@ -134,9 +164,11 @@ console.log("Lets find out some info about our new players.");
 console.log(team1.getPlayer("Joe Best",playerData));
 console.log(team2.getPlayer("Mark Good",playerData));
 console.log(" ");
-// Simulate a game
+// Simulate a game - refresh to play it again with a new random outcome
 var outCome = team1.playGame(team1.getName(),team2.getName());
 console.log("Game score: " + outCome[0][0] + " - " + outCome[0][1] + " : " + outCome[1][0] + " - " + outCome[1][1]);
+console.log(" ");
+team1.haveCollegePlayers();
 
 
 
