@@ -69,7 +69,12 @@ var HockeyTeam = function (name, coach) {
 		var outCome = [];
 		var hScore = Math.floor(Math.random()*8);
 		var aScore = Math.floor(Math.random()*8);
-		if (hScore > aScore) {
+        var period = 1;
+		while (period < 4){
+            console.log("Playing period #" + period + ".");
+            period++;
+        };
+        if (hScore > aScore) {
 			console.log(homeTeam + " won the game!");
 		}
 		else if (aScore > hScore) {
@@ -87,7 +92,7 @@ var HockeyTeam = function (name, coach) {
 			for (var ii = 0, jj = playerData.players.length; ii < jj; ii++){
 				var play = playerData.players[ii];
 				if ((roster[i] === play.name) && (play.playedCollege === true)) {
-					collegePlayers = true
+					collegePlayers = true;
 					break;
 				} else if ((roster[i] === play.name) && (play.playedCollege === false)) {
 					break;
