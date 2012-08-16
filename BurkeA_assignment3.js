@@ -49,18 +49,37 @@ var hockeyTeam = function (name, coach) {
 				if (playerRemove === -1) {
 					console.log("Player not found.");
 				} else {
-					console.log(playerRemove);
+					//console.log(playerRemove);  // Debug usage to check index location
 					roster.splice(playerRemove,1);
+					console.log(player + " removed from " + name + " roster.");
 				};
 			};
 		};
+		return roster;
 	};
 	var addPlayer = function (player) {  // Function takes an array of player or players
 		for (var i =0, j = player.length; i<j; i++) {
 			roster.push(player[i]);
+			console.log(player[i] + " added to " + name + " roster.");
 		};
+		return roster;
 	};
-
+	var playGame = function (homeTeam,awayTeam){
+		var outCome = [];
+		var hScore = Math.floor(Math.random()*11);
+		var aScore = Math.floor(Math.random()*11);
+		if (hScore > aScore) {
+			console.log(hometeam + " won the game!");
+		}
+		else if (aScore > hScore) {
+			console.log(awayTeam + " won the game!");
+		} else {
+			console.log("Game ended in a tie!");
+		};
+		outCome.push([homeTeam,hScore]);
+		outCome.push([awayTeam,aScore]);
+		return outCome;
+	};
 
 	// Public methods
 	return {
@@ -69,29 +88,35 @@ var hockeyTeam = function (name, coach) {
 		"getPlayer": getPlayer,	// Accessor
 		"getRoster": getRoster,	// Accessor
 		"cutPlayer": cutPlayer, // Mutator
-		"addPlayer": addPlayer  // Mutator
+		"addPlayer": addPlayer, // Mutator
+		"playGame": playGame
 
 	};
 };
 
 
 // Create Team
-var ravens = hockeyTeam("Ravens", "Joe Mann");
-teams.push(ravens);
-var blackhawks = hockeyTeam("Black Hawks", "Sean Smith");
-teams.push(blackhawks);
-console.log(teams);
+console.log("Time to create some Hockey Teams!");
+var team1 = hockeyTeam("Ravens", "Joe Mann");
+console.log(team1.getName() + " team created and the coach is " + team1.getCoach() + ".");
+teams.push(team1);
+var team2 = hockeyTeam("Black Hawks", "Sean Smith");
+console.log(team2.getName() + " team created and the coach is " + team2.getCoach() + ".");
+teams.push(team2);
+console.log(" ");
 // Add players to team
-ravens.addPlayer(["Aaron Burke", "John Doe", "Bob Smith", "Mark Jones", "Bill Smith", "Robert White"]);
-blackhawks.addPlayer(["Jack Burke", "Jim Dole", "Ben Dover", "Mike Jones", "Matt Black", "Alex Sole"]);
-console.log(ravens.getName());
-console.log(ravens.getRoster());
-console.log(blackhawks.getName());
-console.log(blackhawks.getRoster());
+console.log("These teams needs some players!" + "\n" + "Lets add some to the rosters.");
+team1.addPlayer(["Aaron Burke", "John Doe", "Bob Smith", "Mark Jones", "Bill Smith", "Robert White"]);
+team2.addPlayer(["Jack Burke", "Jim Dole", "Ben Dover", "Mike Jones", "Matt Black", "Alex Sole"]);
+console.log("Team 1's name is the " + team1.getName() + ".");
+console.log("Here is the " + team1.getName()+ " roster: " + team1.getRoster() + ".");
+console.log("Team 2's name is the " + team2.getName() + ".");
+console.log("Here is the " + team2.getName()+ " roster: " + team2.getRoster() + ".");
 
 
-ravens.cutPlayer(["Bob Smith"]);
-console.log(ravens.getRoster());
+team1.cutPlayer(["Bob Smith"]);
+console.log(team1.getRoster());
 //console.log(player1.name());
 console.log(" ");
-console.log(ravens.getPlayer("Robert White",json));
+console.log(team1.getPlayer("Robert White",json));
+
