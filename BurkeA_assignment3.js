@@ -5,7 +5,7 @@
 	Creating a Hockey Team with players
 */
 
-var teams = [];  // Hold array of hockeyTeam objects created
+var teams = [];  // Holds an array of hockeyTeam objects created
 
 var hockeyTeam = function (name, coach) {
 	// Private
@@ -32,7 +32,8 @@ var hockeyTeam = function (name, coach) {
 			var play = json.players[ii];
 			//console.log(play.name + " " + roster[i]);  // Debug check on loop
 			if (roster[i] === play.name) {
-				playerInfo = play.name + " " + "age: " + play.age + "\n" + play.born[0] + " " + play.born[1] + "," + play.born[2];
+				playerInfo = play.name + " - " + "Age: " + play.age + " - " + "Born: " + play.born[0] + " in " + play.born[1] + "," + play.born[2]
+					+ "\n" + "Position: " + play.position + " - " + "Shoots: " + play.hand;
 				return playerInfo;
 			};
 		};
@@ -64,12 +65,12 @@ var hockeyTeam = function (name, coach) {
 		};
 		return roster;
 	};
-	var playGame = function (homeTeam,awayTeam){
+	var playGame = function (homeTeam,awayTeam){    // Game simulation every play has a different outcome
 		var outCome = [];
 		var hScore = Math.floor(Math.random()*11);
 		var aScore = Math.floor(Math.random()*11);
 		if (hScore > aScore) {
-			console.log(hometeam + " won the game!");
+			console.log(homeTeam + " won the game!");
 		}
 		else if (aScore > hScore) {
 			console.log(awayTeam + " won the game!");
@@ -106,17 +107,36 @@ teams.push(team2);
 console.log(" ");
 // Add players to team
 console.log("These teams needs some players!" + "\n" + "Lets add some to the rosters.");
+console.log(" ");
 team1.addPlayer(["Aaron Burke", "John Doe", "Bob Smith", "Mark Jones", "Bill Smith", "Robert White"]);
+console.log(" ");
 team2.addPlayer(["Jack Burke", "Jim Dole", "Ben Dover", "Mike Jones", "Matt Black", "Alex Sole"]);
+console.log(" ");
+// View the rosters
 console.log("Team 1's name is the " + team1.getName() + ".");
 console.log("Here is the " + team1.getName()+ " roster: " + team1.getRoster() + ".");
+console.log(" ");
 console.log("Team 2's name is the " + team2.getName() + ".");
 console.log("Here is the " + team2.getName()+ " roster: " + team2.getRoster() + ".");
-
-
-team1.cutPlayer(["Bob Smith"]);
-console.log(team1.getRoster());
-//console.log(player1.name());
 console.log(" ");
-console.log(team1.getPlayer("Robert White",json));
+// Cut some players
+console.log("Looks like we need to cut some players before the big game.");
+team1.cutPlayer(["Bob Smith"]);
+team2.cutPlayer(["Matt Black"]);
+console.log(" ");
+// Pickup some new players 
+console.log("Time to pick up some better help.")
+team1.addPlayer(["Joe Best"]);
+team2.addPlayer(["Mark Good"]);
+console.log(" ");
+// Get the new players info
+console.log("Lets find out some info about our new players.");
+console.log(team1.getPlayer("Joe Best",playerData));
+console.log(team2.getPlayer("Mark Good",playerData));
+console.log(" ");
+// Simulate a game
+var outCome = team1.playGame(team1.getName(),team2.getName());
+console.log("Game score: " + outCome[0][0] + " - " + outCome[0][1] + " : " + outCome[1][0] + " - " + outCome[1][1]);
+
+
 

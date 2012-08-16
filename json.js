@@ -5,7 +5,7 @@
 // Players List
 
 
-var json = {
+var playerData = {
 	"players": [
 		{
 			"name": "Aaron Burke",
@@ -47,7 +47,7 @@ var json = {
 			"age": 28,
 			"hand": "Left",
 			"position": "Left Defense",
-			"born": ["7-20-84","Anarbor","MI"]
+			"born": ["7-20-84","Ann Arbor","MI"]
 		},
 		{
 			"name": "Jack Burke",
@@ -90,6 +90,20 @@ var json = {
 			"hand": "Left",
 			"position": "Left Defense",
 			"born": ["10-2-84","Buffalo","NY"]
+		},
+		{
+			"name": "Joe Best",
+			"age": 25,
+			"hand": "Right",
+			"position": "Right Wing",
+			"born": ["1-3-87","Vancouver","CAN"]
+		},
+		{
+			"name": "Mark Good",
+			"age": 28,
+			"hand": "Right",
+			"position": "Right Defense",
+			"born": ["9-2-84","Ontario","CAN"]
 		}
 
 	]
